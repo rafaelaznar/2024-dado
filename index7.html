@@ -31,7 +31,7 @@
             });
             return { promise, reject, resolve };
         }
-        document.addEventListener('DOMContentLoaded', () => {
+        function main() {
             let { promise: promise_boton_1, resolve: resolve_boton_1, reject: reject_boton_1 } = generateDeferredPromise();
             let { promise: promise_boton_2, resolve: resolve_boton_2, reject: reject_boton_2 } = generateDeferredPromise();
             let { promise: promise_boton_3, resolve: resolve_boton_3, reject: reject_boton_3 } = generateDeferredPromise();
@@ -52,7 +52,9 @@
                 console.log(values);
                 alert('Todas las promesas se han resuelto');
             });
-
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            main();
         });
     </script>
 </body>
